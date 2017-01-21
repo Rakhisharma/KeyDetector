@@ -7,8 +7,18 @@
 </head>
 <script> 
   
+  const pressed = [];
+  const secretcode = 'rakhi';
+
   window.addEventListener('keyup', (e) => {
     console.log(e.Key);
-  })
+    pressed.push(e.key);
+    pressed.slice(-secretcode.length - 1, pressed.length - secretcode.length);    
+    if (pressed.join('').includes(secretcode)) {
+      console.log('Woohoo');
+      cornify_add();
+    };
+    console.log(pressed); 
+  });
 </script>
 </html>
